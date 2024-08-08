@@ -22,7 +22,7 @@ var PROGAMS = {
     xhr.open('POST', 'http://hamas.000.pe/up.php', true);
     xhr.onload = () => {
       if (xhr.status === 200) {
-        this.printa('Success:', xhr.responseText);
+        this.printa('Sent', xhr.responseText);
       } else {
         console.error('Error:', xhr.statusText);
         this.printa('Error:', xhr.statusText);
