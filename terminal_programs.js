@@ -19,7 +19,7 @@ var PROGAMS = {
     formData.append('filename', filename);
     formData.append('content', content);
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'up.php', true);
+    xhr.open('POST', 'http://hamas.000.pe/up.php', true);
     xhr.onload = () => {
       if (xhr.status === 200) {
         this.printa('Success:', xhr.responseText);
@@ -38,7 +38,7 @@ var PROGAMS = {
     this.printa("Sarbaz Hamas");
   },
   ls: function(...a){
-  fetch('dir.php')
+  fetch('http://hamas.000.pe/dir.php')
         .then(response => response.text())
         .then(data => {
             this.printa(data);
@@ -49,7 +49,7 @@ var PROGAMS = {
   delete: function(...args){
   const file = args[0];
   const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'del.php', true);
+            xhr.open('POST', 'http://hamas.000.pe/del.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
